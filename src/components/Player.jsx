@@ -1,6 +1,6 @@
-import { FaUser, FaFlag } from "react-icons/fa";
+import { FaUser, FaFlag, FaTrash } from "react-icons/fa";
 
-const Player = ({ player }) => {
+const Player = ({ player, handleChoosePlayer, view, handleRemovePlayer }) => {
   const {
     playerId,
     playerImg,
@@ -11,8 +11,37 @@ const Player = ({ player }) => {
     bowlingType,
     biddingPrice,
   } = player;
+  if (view === "selected") {
+    return (
+      <div className="flex items-center justify-between border border-gray-300 rounded-lg p-3 w-full shadow-sm">
+        <div className="flex items-center">
+          {/* Left: Player image */}
+          <img
+            src={player.playerImg}
+            alt={player.name}
+            className="w-16 h-16 rounded-lg object-cover"
+          />
+          <div>
+            {/* Middle: Name and batting type */}
+            <div className="flex-1 mx-4">
+              <h1 className="text-lg font-bold">{player.name}</h1>
+              <p className="text-gray-500">{player.battingType}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Delete icon */}
+        <button
+          onClick={() => handleRemovePlayer(playerId)}
+          className="text-red-500 hover:text-red-700 transition-colors cursor-pointer p-4"
+        >
+          <FaTrash size={20} />
+        </button>
+      </div>
+    );
+  }
   return (
-    <div className="border-1  border-gray-100 w-full p-4 rounded-lg flex flex-col items-center gap-3">
+    <div className="border-1 border-gray-100 w-full p-4 rounded-lg flex flex-col items-center gap-3">
       <img
         className="mb-2 rounded-lg w-[440px] h-[250px]"
         src={playerImg}
@@ -36,7 +65,10 @@ const Player = ({ player }) => {
       </div>
       <div className="w-[440px] flex items-center justify-between">
         <p className="font-bold">price: ${biddingPrice}</p>
-        <button className="text-sm p-2 rounded-lg border-2 border-[#f3f3f3] cursor-pointer  hover:border-[#E7FE29]">
+        <button
+          onClick={() => handleChoosePlayer(player)}
+          className="text-sm p-2 rounded-lg border-2 border-[#f3f3f3] cursor-pointer  hover:border-[#E7FE29]"
+        >
           Choose Player
         </button>
       </div>

@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import toast, { Toaster } from "react-hot-toast";
 import Players from "./components/Players";
+import Footer from "./components/Footer";
 
 function App() {
   const [coins, setCoins] = useState(0);
@@ -15,13 +16,21 @@ function App() {
       duration: 2000, // 2 seconds
     });
   };
+
   return (
-    <div className="font-sora space-y-10 max-w-[1440px] mx-auto ">
-      <Toaster position="top-right" reverseOrder={false} />
-      <Navbar coins={coins}></Navbar>
-      <Hero handleAddCoins={handleAddCoins}></Hero>
-      <Players></Players>
-    </div>
+    <>
+      <div className="font-sora space-y-10 max-w-[1440px] mx-auto ">
+        <Toaster position="top-right" reverseOrder={false} />
+        <Navbar coins={coins}></Navbar>
+        <Hero handleAddCoins={handleAddCoins}></Hero>
+        <Players coins={coins} setCoins={setCoins}></Players>
+      </div>
+      <div className="bg-base-200">
+        <div className="max-w-[1440px] mx-auto">
+          <Footer />
+        </div>
+      </div>
+    </>
   );
 }
 

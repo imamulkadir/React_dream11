@@ -24,7 +24,7 @@ const Hero = ({ handleAddCoins }) => {
       <div className="border-1 border-[#E7FE29] flex items-center p-2 rounded-2xl mt-6">
         <button
           onClick={handleAddCoins}
-          className="text-md px-4 py-3 bg-[#E7FE29] text-gray-900 rounded-lg font-semibold shadow hover:bg-gray-100 transition"
+          className="text-md px-4 py-3 bg-[#E7FE29] text-gray-900 cursor-pointer rounded-lg font-semibold shadow hover:bg-gray-100 transition"
         >
           Claim Free Credit
         </button>

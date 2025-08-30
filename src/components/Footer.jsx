@@ -14,19 +14,19 @@ const Footer = () => {
             backgroundPosition: "center",
           }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center my-4 text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center my-4 text-gray-900">
             Subscribe to our Newsletter
           </h1>
-          <p className="text-center text-gray-300 mb-4 text-sm sm:text-base">
+          <p className="text-center text-gray-600 mb-4 text-sm sm:text-base">
             Get the latest updates and news right in your inbox!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 w-full px-4 sm:px-0">
             <input
               type="text"
               placeholder="username@site.com"
-              className="input input-bordered bg-white text-gray-950 placeholder:text-gray-900 flex-1 px-2 py-3"
+              className="input input-bordered max-w-82 bg-white text-gray-950 placeholder:text-gray-900 flex-1 px-2 py-3"
             />
-            <button className="btn bg-gradient-to-r from-orange-300 to-red-600 w-full sm:w-auto">
+            <button className="btn bg-gradient-to-r from-orange-300 to-red-600 w-full sm:w-auto border-none hover:text-slate-700">
               Subscribe
             </button>
           </div>

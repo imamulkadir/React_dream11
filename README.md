@@ -1,4 +1,4 @@
-# Dream11 Clone
+# DreamSix
 
 A React-based web application that simulates the core features of Dream11, a popular fantasy sports platform. This project demonstrates modern React development practices, including component-based architecture, state management, API integration, and responsive design.
 
@@ -43,7 +43,7 @@ A React-based web application that simulates the core features of Dream11, a pop
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/dream11.git
+git clone https://github.com/imamulkadir/dream6.git
 cd dream11
 npm install
 ```
@@ -60,20 +60,26 @@ The app will run at [http://localhost:5173](http://localhost:5173).
 
 ## Project Structure
 
-```
-dream11/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── redux/ (or context/)
-│   ├── api/
-│   ├── assets/
-│   ├── App.js
-│   └── index.js
-├── package.json
-└── README.md
+```structure
+    Dream6/
+    ├── public/
+    │   └── index.html
+    ├── src/
+    │   ├── assets/
+    │   │   └── images/
+    │   ├── components/
+    │   │   ├── Footer.jsx
+    │   │   ├── Hero.jsx
+    │   │   ├── Mavbar.jsx
+    │   │   ├── Player.jsx
+    │   │   └── Players.jsx
+    │   ├── App.css
+    │   ├── App.jsx
+    │   ├── index.css
+    │   └── main.jsx
+    ├── package.json
+    ├── tailwind.config.js
+    └── README.md
 ```
 
 - **components/**: Reusable UI components

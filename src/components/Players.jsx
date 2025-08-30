@@ -63,17 +63,19 @@ const Players = ({ coins, setCoins }) => {
       : [];
 
   return (
-    <div className="mb-80 ">
-      <div className="flex justify-between items-center ">
-        <h1 className="text-2xl font-bold">
+    <div className="mb-40 sm:mb-60">
+      {/* Header with toggle */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
+        <h1 className="text-xl sm:text-2xl font-bold">
           {view === "selected"
             ? `Selected Players (${selectedPlayers.length}/6)`
-            : "Avaialble Players"}
+            : "Available Players"}
         </h1>
+
         <div className="inline-flex border border-gray-300 rounded-xl overflow-hidden">
           <button
             onClick={() => setView("available")}
-            className={`px-6 py-2 font-medium cursor-pointer ${
+            className={`px-4 sm:px-6 py-2 font-medium cursor-pointer text-sm sm:text-base ${
               view === "available"
                 ? "bg-[#E7FE29] text-black"
                 : "bg-white text-gray-500"
@@ -83,7 +85,7 @@ const Players = ({ coins, setCoins }) => {
           </button>
           <button
             onClick={() => setView("selected")}
-            className={`px-6 py-2 font-medium cursor-pointer ${
+            className={`px-4 sm:px-6 py-2 font-medium cursor-pointer text-sm sm:text-base ${
               view === "selected"
                 ? "bg-[#E7FE29] text-black"
                 : "bg-white text-gray-500"
@@ -91,21 +93,16 @@ const Players = ({ coins, setCoins }) => {
           >
             Selected ({selectedPlayers.length})
           </button>
-          {/* <button className="px-6 py-2 bg-[#E7FE29] text-black font-medium">
-            Available
-          </button> */}
-          {/* <button className="px-6 py-2 bg-white text-gray-500 font-medium">
-            Selected (0)
-          </button> */}
         </div>
       </div>
+
       {/* Players Grid */}
       {displayedPlayers.length > 0 ? (
         <div
           className={`grid gap-4 mt-6 ${
             view === "selected"
               ? "grid-cols-1"
-              : "md:grid-cols-3 place-items-center"
+              : "grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 place-items-center"
           }`}
         >
           {displayedPlayers.map((player) => (
@@ -131,19 +128,10 @@ const Players = ({ coins, setCoins }) => {
           ))}
         </div>
       ) : (
-        <p className="text-center text-gray-500 mt-6">
+        <p className="text-center text-gray-500 mt-6 text-sm sm:text-base">
           {view === "selected" ? "No player selected" : "No players available"}
         </p>
       )}
-      {/* <div className="grid md:grid-cols-3 place-items-center gap-6 mt-6">
-        {players.map((player) => (
-          <Player
-            key={player.playerId}
-            player={player}
-            handleChoosePlayer={handleChoosePlayer}
-          ></Player>
-        ))}
-      </div> */}
     </div>
   );
 };

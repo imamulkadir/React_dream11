@@ -25,10 +25,8 @@ function App() {
         <Hero handleAddCoins={handleAddCoins}></Hero>
         <Players coins={coins} setCoins={setCoins}></Players>
       </div>
-      <div className="bg-base-200">
-        <div className="max-w-[1440px] mx-auto">
-          <Footer />
-        </div>
+      <div className="bg-[#060919]">
+        <Footer />
       </div>
     </>
   );
